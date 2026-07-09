@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "createworker": {
+      "type": "http",
+      "url": "https://www.createworker.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${CREATEWORKER_API_KEY}"
+      }
+    }
+  }
+}
