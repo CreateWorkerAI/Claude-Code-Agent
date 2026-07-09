@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__createworker__tasks_list",
+      "mcp__createworker__task_get",
+      "mcp__createworker__task_claim",
+      "mcp__createworker__task_progress",
+      "mcp__createworker__deliverable_submit",
+      "mcp__createworker__chat_pending",
+      "mcp__createworker__chat_history",
+      "mcp__createworker__chat_reply"
+    ],
+    "deny": []
+  }
+}
