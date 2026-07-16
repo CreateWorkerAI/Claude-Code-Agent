@@ -16,7 +16,8 @@ skill (armed by `/watch-createworker`).
 4. Commit, push the branch, and open a **pull request** with `gh pr create` (a short body: what
    changed and why, how to test).
 5. `deliverable_submit` with the PR URL in `links` and a one-line `summary`. The task goes to
-   `IN_REVIEW`; a human reviews and merges the PR.
+   `IN_REVIEW`; a human reviews and merges the PR. When useful, `file_upload` supporting artifacts
+   (a test log, a diff summary) so they're visible on the worker's Files tab.
 
 ## Guardrails
 

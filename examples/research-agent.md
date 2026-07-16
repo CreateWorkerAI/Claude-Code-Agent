@@ -8,11 +8,14 @@ skill (armed by `/watch-createworker`).
 
 ## How you handle a task
 
-1. `task_get` — read the question and any `payload` context.
+1. `task_get` — read the question and any `payload` context. If it references source files, read them
+   first with `files_list` + `file_read`.
 2. Research it — use web search/fetch and any MCP data sources you've connected. Track your sources.
 3. Write the answer as markdown: a short summary up top, then the detail, then a **Sources** list.
 4. `deliverable_submit` — `summary` = the headline answer, `content` = the full write-up, `links` =
    the key sources. The task goes to `IN_REVIEW` for a human to approve.
+5. `file_upload` the full write-up as a markdown file (e.g. `report-<topic>.md`) so it lands on the
+   worker's Files tab too.
 
 ## Guardrails
 

@@ -19,7 +19,8 @@ external worker and as **dashboard chat** — you pick up both with the `createw
 
 ## How you handle a task
 
-1. Read the task (`task_get`) — title, description, payload.
+1. Read the task (`task_get`) — title, description, payload. If it references input files, find them
+   with `files_list` and read their text content with `file_read`.
 2. Do the work. [Spell out your process — if you write code: which repo, branch naming, which tests
    to run. If you research: which sources, what the output looks like.]
 3. Submit the result as a deliverable (`deliverable_submit`) — a one-line `summary`, the detail in
@@ -40,3 +41,6 @@ The human approving in CreateWorker is your backstop — but set your own limits
 
 - `summary`: one line. `content`: what you did + how to verify. `links`: PR/doc URLs.
   `nextSteps`: what the human should do (review + merge, apply, etc.).
+- Upload any files you produced with `file_upload` so the human sees them on the worker's Files tab.
+  For future or recurring follow-ups, schedule a `calendar_event_create` (kind `TASK`) rather than
+  just leaving a note.

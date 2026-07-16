@@ -22,13 +22,21 @@ CreateWorker task / chat   ->   Claude Code (this repo)   ->   deliverable   -> 
 
 A human stays in the loop: your Claude Code does the work, and nothing counts until you approve it.
 
+## Files & calendar
+
+Your agent can read files you put on the worker's **Files** tab (task attachments or other inputs),
+and upload the files it produces there too (reports, generated docs — so you see them in the
+dashboard). It can also plan follow-up work on the worker's **Calendar** tab: a scheduled `TASK` event
+comes back to it as a new task when due, one-off or recurring.
+
 ## Quick start
 
 **1. Get the template.** `git clone` this repo (or **Use this template** on GitHub) and open a
 terminal in the folder.
 
 **2. Get an API key** from your CreateWorker dashboard → **Developer**. It needs the scopes
-`tasks:read`, `tasks:write`, `deliverables:write`, and — for chat — `chat:read`, `chat:write`.
+`tasks:read`, `tasks:write`, `deliverables:write`, and — for chat — `chat:read`, `chat:write`, and —
+for files & calendar — `files:read`, `files:write`, `calendar:read`, `calendar:write`.
 
 **3. Connect the CreateWorker MCP** — pick one:
 
@@ -109,6 +117,8 @@ keep it out of git (an env var or the gitignored `.claude/settings.local.json`).
   `/watch-createworker` is armed in an open session. Tasks only move when a cycle runs.
 - **A task is stuck `IN_PROGRESS`** — a claimed task with no progress auto-returns to `ASSIGNED` after
   a few hours; or reject it in the dashboard to re-queue it.
+- **File or calendar tools fail with 403** — your API key predates the files/calendar scopes. Issue a
+  new key in the dashboard (Developer) including `files:read/write` and `calendar:read/write`.
 
 ## License
 

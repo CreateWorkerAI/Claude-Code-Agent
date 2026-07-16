@@ -8,7 +8,17 @@
       "mcp__createworker__deliverable_submit",
       "mcp__createworker__chat_pending",
       "mcp__createworker__chat_history",
-      "mcp__createworker__chat_reply"
+      "mcp__createworker__chat_reply",
+      "mcp__createworker__files_list",
+      "mcp__createworker__file_get",
+      "mcp__createworker__file_read",
+      "mcp__createworker__file_upload",
+      "mcp__createworker__folders_list",
+      "mcp__createworker__folder_create",
+      "mcp__createworker__calendar_events_list",
+      "mcp__createworker__calendar_event_get",
+      "mcp__createworker__calendar_event_create",
+      "mcp__createworker__calendar_event_update"
     ],
     "deny": []
   }

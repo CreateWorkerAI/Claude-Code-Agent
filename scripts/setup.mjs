@@ -39,6 +39,19 @@ async function listWorkers() {
   const acct = await api("GET", "/account");
   console.log(`OK - key works. Organization: ${acct.name} (${acct.slug})`);
 
+  console.log("\nCapabilities:");
+  for (const [label, path, scope] of [
+    ["files", "/files?limit=1", "files:read"],
+    ["calendar", "/calendar/events?limit=1", "calendar:read"],
+  ]) {
+    try {
+      await api("GET", path);
+      console.log(`  ${label}: OK`);
+    } catch (e) {
+      console.log(`  ${label}: unavailable (${e.message.includes("403") ? `key lacks ${scope} — issue a new key with the files/calendar scopes` : e.message})`);
+    }
+  }
+
   const { data: workers } = await api("GET", "/workers");
   if (!workers || !workers.length) {
     console.log('\nNo workers yet. Create one:  node scripts/setup.mjs create "My Agent"');
