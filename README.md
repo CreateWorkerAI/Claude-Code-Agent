@@ -117,8 +117,9 @@ keep it out of git (an env var or the gitignored `.claude/settings.local.json`).
   `/watch-createworker` is armed in an open session. Tasks only move when a cycle runs.
 - **A task is stuck `IN_PROGRESS`** — a claimed task with no progress auto-returns to `ASSIGNED` after
   a few hours; or reject it in the dashboard to re-queue it.
-- **File or calendar tools fail with 403** — your API key predates the files/calendar scopes. Issue a
-  new key in the dashboard (Developer) including `files:read/write` and `calendar:read/write`.
+- **File or calendar tools fail with 403** — your API key predates the files/calendar scopes. Add
+  them to your key in the dashboard (**Developer → Edit scopes**) — or issue a new key including
+  `files:read/write` and `calendar:read/write`.
 
 ## License
 
